@@ -21,11 +21,10 @@
 
       <!-- sidebar info -->
       <div class="sidebar-info">
-        <img class="sidebar-info-avatar" src="./assets/images/dennie_mok.jpg" alt="Dennie Mok">
-        <div class="sidebar-info-content">
+        <img class="avatar" src="./assets/images/dennie_mok.jpg" alt="Dennie Mok">
+        <div>
           <h1 class="name" title="Dennie Mok">Dennie Mok</h1>
           <p class="title">RPA Developer</p>
-          <img class="certs" src="./assets/images/certification.png" alt="logo">
         </div>
       </div>
 
@@ -43,7 +42,7 @@
           </li>
           <li class="contact-item">
             <p class="contact-title">Location</p>
-            <address>Sydney, New South Wales, Australia</address>
+            <address>Sydney, Australia</address>
           </li>
         </ul>
         <div class="separator"></div>
@@ -75,16 +74,16 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <a class="navbar-link active" data-nav-link>About</a>
+            <a class="navbar-link active">About</a>
           </li>
           <li class="navbar-item">
-            <a class="navbar-link" data-nav-link>Resume</a>
+            <a class="navbar-link">Resume</a>
           </li>
           <li class="navbar-item">
-            <a class="navbar-link" data-nav-link>Portfolio</a>
+            <a class="navbar-link">Portfolio</a>
           </li>
           <li class="navbar-item">
-            <a class="navbar-link" data-nav-link>Contact</a>
+            <a class="navbar-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -133,6 +132,7 @@
                   <img src="./assets/images/uipath_logo.jpg" alt="uipath" title="UiPath">
                   <img src="./assets/images/automation_anywhere_logo.jpg" alt="automation anywhere" title="Automation Anywhere">
                   <img src="./assets/images/power_automate_logo.png" alt="power automate" title="Power Automate">
+                  <img src="./assets/images/certification.png" alt="certification" title="Certification">
                 </div>
               </div>
             </li>
@@ -183,7 +183,7 @@
           <h3 class="h3 testimonials-title">Recommendations</h3>
           <ul class="testimonials-list">
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card">
                 <button class="modal-view-btn">
                   <ion-icon name="eye-outline"></ion-icon>
                 </button>
@@ -203,7 +203,7 @@
               </div>
             </li>
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card">
                 <button class="modal-view-btn">
                   <ion-icon name="eye-outline"></ion-icon>
                 </button>
@@ -225,7 +225,7 @@
               </div>
             </li>
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card">
                 <button class="modal-view-btn">
                   <ion-icon name="eye-outline"></ion-icon>
                 </button>
@@ -247,7 +247,7 @@
               </div>
             </li>
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card">
                 <button class="modal-view-btn">
                   <ion-icon name="eye-outline"></ion-icon>
                 </button>
@@ -269,7 +269,7 @@
               </div>
             </li>
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card">
                 <button class="modal-view-btn">
                   <ion-icon name="eye-outline"></ion-icon>
                 </button>
@@ -293,20 +293,20 @@
         </section>
 
         <!-- testimonials modal -->
-        <div class="modal-container" data-modal-container>
-          <div class="overlay" data-overlay></div>
+        <div class="modal-container">
+          <div class="modal-overlay"></div>
           <section class="testimonials-modal testimonials-item">
-            <button class="modal-close-btn" data-modal-close-btn>
+            <button class="modal-close-btn">
               <ion-icon name="close-outline"></ion-icon>
             </button>
             <div class="profile">
-              <img class="avatar" src="./assets/images/avatar-1.png" alt="Daniel lewis" data-modal-img>
+              <img class="avatar" src="" alt="Daniel lewis">
               <div>
-                <h3 class="h3 title" data-modal-title>Daniel lewis</h3>
-                <p class="subtitle" data-modal-title2>CEO</p>
+                <h3 class="h3 title">Daniel lewis</h3>
+                <p class="subtitle">CEO</p>
               </div>
             </div>
-            <div class="text-full" data-modal-text>
+            <div class="text-full">
             </div>
           </section>
         </div>
@@ -774,66 +774,78 @@
         <section class="projects">
           <ul class="filter-list">
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active">All</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Automation</button>
+              <button>RPA</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Web Applications</button>
+              <button>Web</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Database Applications</button>
+              <button>Database</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Minecraft Plugins</button>
+              <button>C</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Machine Learning</button>
+              <button>Python</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Architecture</button>
+              <button>Java</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Others</button>
+              <button>Machine Learning</button>
+            </li>
+            <li class="filter-item">
+              <button>Architecture</button>
+            </li>
+            <li class="filter-item">
+              <button>Others</button>
             </li>
           </ul>
           <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
+            <button class="filter-select">
+              <div class="select-value">Select category</div>
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
             </button>
             <ul class="select-list">
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button>All</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Automation</button>
+                <button>RPA</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Web Applications</button>
+                <button>Web</button>
               </li>
               <li class="select-item">
-                <button data-select-btn>Minecraft Plugins</button>
+                <button>Database</button>
               </li>
               <li class="select-item">
-                <button data-select-btn>Database Applications</button>
+                <button>C</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Machine Learning</button>
+                <button>Python</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Architecture</button>
+                <button>Java</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Others</button>
+                <button>Machine Learning</button>
+              </li>
+              <li class="select-item">
+                <button>Architecture</button>
+              </li>
+              <li class="select-item">
+                <button>Others</button>
               </li>
             </ul>
           </div>
           <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="automation">
+            <li class="project-item active" data-category="rpa">
               <div class="content-card">
                 <h4 class="h4 title">RPA Implementation: IT Automation for Public Healthcare Systems</h4>
                 <p class="category">Commerical Project (Associated with IT-Partners Limited)</p>
@@ -882,7 +894,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="automation">
+            <li class="project-item active" data-category="rpa">
               <div class="content-card">
                 <h4 class="h4 title">RPA Proof-of-Concept: IT Automation for Public Healthcare Systems</h4>
                 <p class="category">Commerical Project (Associated with IT-Partners Limited)</p>
@@ -925,7 +937,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="web applications">
+            <li class="project-item active" data-category="web,database">
               <div class="content-card">
                 <h4 class="h4 title">ERP System: in-house web application Revampment</h4>
                 <p class="category">Commerical Project (Associated with IT-Partners Limited)</p>
@@ -960,7 +972,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="architecture">
+            <li class="project-item active" data-category="architecture">
               <div class="content-card">
                 <img class="reel" src="assets/images/cs1_asset.png" alt="Cities Skylines">
                 <h4 class="h4 title">Asset Creation of Hong Kong Public Buildings and Facilities in Cities Skylines</h4>
@@ -992,7 +1004,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="machine learning">
+            <li class="project-item active" data-category="machine learning">
               <div class="content-card">
                 <img class="reel" src="assets/images/fyp_mobile.png" alt="Voice-Controlled Smart Instruments">
                 <h4 class="h4 title">Voice-Controlled Smart Instruments with Machine Learning</h4>
@@ -1027,7 +1039,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="minecraft plugins">
+            <li class="project-item active" data-category="java">
               <div class="content-card">
                 <img class="reel" src="assets/images/admin360.gif" alt="Admin360-Reloaded">
                 <h4 class="h4 title">Admin360-Reloaded: Minecraft Java Plugin Fork Development</h4>
@@ -1047,7 +1059,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="architecture">
+            <li class="project-item active" data-category="architecture">
               <div class="content-card">
                 <img class="reel" src="assets/images/pmc_hk.png" alt="Hong Kong School Buildings">
                 <h4 class="h4 title">Analysis of Hong Kong Public Housing and School Buildings in Minecraft</h4>
@@ -1099,7 +1111,7 @@
                 </details>
               </div>
             </li>
-            <li class="project-item active" data-filter-item data-category="database applications">
+            <li class="project-item active" data-category="database">
               <div class="content-card">
                 <img class="reel" src="assets/images/hkdse_sba_db.png" alt="Clinical Management System">
                 <h4 class="h4 title">Clinical Management System</h4>
@@ -1167,24 +1179,27 @@
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
-        <section class="contact-form">
-          <form action="https://formspree.io/f/mzzpggez" method="POST" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
-            </div>
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
+        <form class="contact-form" action="https://formspree.io/f/mzzpggez" method="POST">
+          <div class="input-wrapper">
+            <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+            <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+          </div>
+          <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+          <button class="form-btn" type="submit" disabled>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+          </button>
+        </form>
       </article>
 
     </div>
 
   </main>
+
+  <footer>
+    <p>vCard Template by <a href="https://github.com/codewithsadee/vcard-personal-portfolio" target="_blank">codeswithsadee</a></p>
+    <p>© 2024 Dennie Mok | <a href="https://www.linkedin.com/in/denniemok/" target="_blank">LinkedIn</a> | <a href="https://github.com/denniemok" target="_blank">GitHub</a></p>
+  </footer>
 
   <!-- custom js link -->
   <script src="./assets/js/script.js"></script>
