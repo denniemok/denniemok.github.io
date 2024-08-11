@@ -13,7 +13,7 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const modalImg = document.querySelector(".testimonials-modal .profile .avatar");
 const modalTitle = document.querySelector(".testimonials-modal .profile .title");
 const modalSubtitle = document.querySelector(".testimonials-modal .profile .subtitle");
-const modalText = document.querySelector(".testimonials-modal .text-full");
+const modalText = document.querySelector(".testimonials-modal .content-full");
 
 // modal toggle function
 const testimonialsModalFunc = () => {
@@ -22,16 +22,16 @@ const testimonialsModalFunc = () => {
 }
 
 // add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", (evt) => {
-    modalImg.src = evt.currentTarget.querySelector(".profile .avatar").src;
-    modalImg.alt = evt.currentTarget.querySelector(".profile .avatar").alt;
-    modalTitle.innerHTML = evt.currentTarget.querySelector(".profile .title").innerHTML;
-    modalSubtitle.innerHTML = evt.currentTarget.querySelector(".profile .subtitle").innerHTML;
-    modalText.innerHTML = evt.currentTarget.querySelector(".text").innerHTML;
+testimonialsItem.forEach(item => {
+  item.addEventListener("click", () => {
+    modalImg.src = item.querySelector(".profile .avatar").src;
+    modalImg.alt = item.querySelector(".profile .avatar").alt;
+    modalTitle.innerHTML = item.querySelector(".profile .title").innerHTML;
+    modalSubtitle.innerHTML = item.querySelector(".profile .subtitle").innerHTML;
+    modalText.innerHTML = item.querySelector(".content").innerHTML;
     testimonialsModalFunc();
   });
-}
+});
 
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
@@ -43,63 +43,60 @@ const selectItems = document.querySelectorAll(".select-item button");
 const selectValue = document.querySelector(".select-value");
 const filterBtn = document.querySelectorAll(".filter-item button");
 
-select.addEventListener("click", (evt) => elementToggleFunc(evt.currentTarget));
+select.addEventListener("click", () => elementToggleFunc(select));
 
 // add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", (evt) => {
-    let selectedValue = evt.currentTarget.innerText.toLowerCase();
-    selectValue.innerText = evt.currentTarget.innerText;
+selectItems.forEach(item => {
+  item.addEventListener("click", () => {
+    let selectedValue = item.innerText.toLowerCase();
+    selectValue.innerText = item.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
   });
-}
+});
 
-// filter variables
+// item variables
 const filterItems = document.querySelectorAll(".project-item");
-
-for (let i = 0; i < filterItems.length; i++) {
-  filterItems[i].addEventListener("click", (evt) => {
-    evt.currentTarget.querySelector(".spoiler summary a").click();
-  });
-}
-
 const serviceItems = document.querySelectorAll(".service-item");
 
-for (let i = 0; i < serviceItems.length; i++) {
-  serviceItems[i].addEventListener("click", (evt) => {
-    evt.currentTarget.querySelector(".spoiler summary a").click();
+[...filterItems, ...serviceItems].forEach(item => {
+  item.addEventListener("click", () => {
+    const item2 = item.querySelector(".spoiler");
+    item2.hasAttribute('open') ? item2.removeAttribute('open') : item2.setAttribute('open', true);
   });
-}
+  item.querySelector(".spoiler").addEventListener("click", (evt) => {
+    evt.preventDefault();
+  });
+});
 
 const filterFunc = (selectedValue) => {
-  for (let i = 0; i < filterItems.length; i++) {
+  filterItems.forEach(item => {
     if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
+      item.classList.add("active");
     } else {
-      const a = filterItems[i].dataset.category.split(",");
+      const a = item.dataset.category.split(",");
       if (a.includes(selectedValue)) {
-        filterItems[i].classList.add("active");
+        item.classList.add("active");
       } else {
-        filterItems[i].classList.remove("active");
+        item.classList.remove("active");
       }
     }
-  }
+  });
 }
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
-for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener("click", (evt) => {
-    let selectedValue = evt.currentTarget.innerText.toLowerCase();
-    selectValue.innerText = evt.currentTarget.innerText;
+filterBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+    let selectedValue = btn.innerText.toLowerCase();
+    selectValue.innerText = btn.innerText;
     filterFunc(selectedValue);
     lastClickedBtn.classList.remove("active");
-    evt.currentTarget.classList.add("active");
-    lastClickedBtn = evt.currentTarget;
+    btn.classList.add("active");
+    lastClickedBtn = btn;
   });
-}
+});
 
 // contact form variables
 const form = document.querySelector(".contact-form");
@@ -107,8 +104,8 @@ const formInputs = document.querySelectorAll(".form-input");
 const formBtn = document.querySelector(".form-btn");
 
 // add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", () => {
+formInputs.forEach(input => {
+  input.addEventListener("input", () => {
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
@@ -116,24 +113,24 @@ for (let i = 0; i < formInputs.length; i++) {
       formBtn.setAttribute("disabled", "");
     }
   });
-}
+});
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll(".navbar-link");
 const pages = document.querySelectorAll("[data-page]");
 
 // add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", (evt) => {
-    for (let i = 0; i < pages.length; i++) {
-      if (evt.currentTarget.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+navigationLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    pages.forEach((page, i) => {
+      if (link.innerHTML.toLowerCase() === page.getAttribute("data-page")) {
+        page.classList.add("active");
+        link.classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        page.classList.remove("active");
+        navigationLinks[i].classList.remove("active"); // for that particular link
       }
-    }
+    });
   });
-}
+});
